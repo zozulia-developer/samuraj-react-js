@@ -1,0 +1,22 @@
+.nav {
+    grid-area: n;
+    background-color: green;
+  }
+  .item{
+      color: white;
+      margin: 10px 0px 20px 15px;
+      cursor: pointer;
+  }
+  .item:hover{
+      color: greenyellow;
+  }
+  .item.active{
+      color: gold;
+  }
+  .item.active:hover{
+      color: white;
+  }
+  .item a{
+      font-size: 20px;
+      font-weight: bold;
+  }

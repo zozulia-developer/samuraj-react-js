@@ -1,14 +1,19 @@
-.app-wrapper {
-    margin: 0 auto;
-    display: grid;
-    width: 1200px;
-    grid-template-areas: "h h" "n c";
-    grid-template-rows: 60px 1fr;
-    grid-template-columns: 2fr 10fr;
-    /*grid-gap: 10px;*/
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.8;
+    padding: 0;
+    margin: 0;
+    color: #777D74;
+    background: #fafafb;
 }
 
-.app-wrapper-content {
-    grid-area: c;
-    background-color: cornflowerblue;
+.content-page {
+    margin-left: 0px;
+    padding: 90px 0 0;
+    overflow: hidden;
+    min-height: 100vh;
+    transition: all 0.3s ease-out 0s;
 }

@@ -1,0 +1,39 @@
+.iqNavbarLogo {
+    padding: 0px;
+    width: auto;
+    position: relative;
+    transition: all 0.3s ease-out 0s;
+    background: transparent;
+  }
+  
+  .iqNavbarLogo a {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .iqNavbarLogo img {
+    height: 45px;
+  }
+  
+  .iqNavbarLogo a span {
+    margin-left: 10px;
+    font-size: 28px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 45px;
+    text-decoration: none;
+    color: #3f414d;
+    flex: 1;
+    transition: all 0.3s ease-out 0s;
+  }
+
+  [class^="ri-"], [class*=" ri-"] {
+    font-family: 'remixicon' !important;
+    font-style: normal;
+        vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .ri-menu-line::before {
+    content: "\edef";
+  }

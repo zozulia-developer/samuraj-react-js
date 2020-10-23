@@ -1,49 +1,54 @@
-let rerenderEntireTree = () => {
-  console.log('state changed');
-}
-
-let state = {
-  profilePage: {
-    posts: [
-      { id: 1, message: 'Hi, how are you?', likesCount: 20 },
-      { id: 2, message: "It's my first post", likesCount: 15 }
-    ],
-    newPostText: 'new post text',
+let store = {
+  _state: {
+    newsPage: {
+      posts: [
+        { id: 1, message: 'Hi, how are you?', likesCount: 20 },
+        { id: 2, message: "It's my first post", likesCount: 15 }
+      ],
+      newPostText: 'new post text',
+    },
+    profilePage: {
+      userInfo: [
+        { firstname: 'Kirill', lastname: 'Creator' }
+      ],
+    },
+    dialogsPage: {
+      messages: [
+        { id: 1, message: 'Hi!' },
+        { id: 2, message: 'Hello!' },
+        { id: 3, message: 'Ni hao!' },
+      ],
+      dialogs: [
+        { id: 1, name: 'Василий' },
+        { id: 2, name: 'Леха' },
+        { id: 3, name: 'Жека' },
+      ],
+    }
   },
-  dialogsPage: {
-    messages: [
-      { id: 1, message: 'Hi!' },
-      { id: 2, message: 'Hello!' },
-      { id: 3, message: 'Ni hao!' },
-    ],
-    dialogs: [
-      { id: 1, name: 'Василий' },
-      { id: 2, name: 'Леха' },
-      { id: 3, name: 'Жека' },
-    ],
+  getState() {
+    return this._state;
+  },
+  _callSubscriber() {
+    console.log('state changed');
+  },
+  addPost() {
+    let newPost = {
+      id: 3,
+      message: this._state.newsPage.newPostText,
+      likesCount: 0
+    };
+    this._state.newsPage.posts.push(newPost);
+    this._state.newsPage.newPostText = '';
+    this._callSubscriber(this._state);
+  },
+  updateNewPostText(newText) {
+    this._state.newsPage.newPostText = newText;
+    this._callSubscriber(this._state);
+  },
+  subscribe(observer) {
+    this._callSubscriber = observer;  // наблюдатель, pattern observer
   }
 }
 
-window.state = state;
-
-export const addPost = () => {
-  let newPost = {
-    id: 3,
-    message: state.profilePage.newPostText,
-    likesCount: 0
-  };
-  state.profilePage.posts.push(newPost);
-  state.profilePage.newPostText = '';
-  rerenderEntireTree(state);
-}
-
-export const updateNewPostText = (newText) => {
-  state.profilePage.newPostText = newText;
-  rerenderEntireTree(state);
-}
-
-export const subscribe = (observer) => {
-  rerenderEntireTree = observer;  // наблюдатель, pattern observer
-}
-
-export default state;
+export default store;
+window.state = store;

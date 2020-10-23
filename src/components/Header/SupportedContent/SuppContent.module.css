@@ -1,0 +1,40 @@
+.navbar-list li {
+  float: left;
+  list-style-type: none;
+  position: relative;
+}
+
+.navbarList li>a>img {
+  width: 50px;
+  height: 50px;
+}
+
+.navbar-list li>a {
+  font-size: 18px;
+  padding: 0 15px;
+  line-height: 73px;
+  color: var(--iq-primary);
+  /*display: block;*/
+  min-height: 75px;
+}
+
+.navbar-list li .caption {
+  line-height: 16px;
+}
+
+.iqWavesEffect {
+  position: relative;
+  overflow: hidden;
+}
+
+.lineHeight {
+  line-height: normal;
+}
+
+h6 {
+  font-size: 1.0em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  margin: 0px;
+  color: #3f414d;
+}

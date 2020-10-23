@@ -1,12 +1,19 @@
 import React from 'react';
 import s from './Header.module.css';
+import Logo from './Logo/Logo';
+import Search from './SeachBar/Search';
+import SuppContent from './SupportedContent/SuppContent';
 
-const Header = () => {
+const Header = (props) => {
     return (
-        <header className={s.header}>
-            <a href="#">
-                <img src='https://autoakpp.com.ua/wp-content/themes/autoakpp/img/logo-text.png' alt="logo" />
-            </a>
+        <header className={s.iqTopNavbar}>
+            <div className={s.iqNavbarCustom}>
+                <nav className="navbar navbar-expand-lg navbar-light p-0">
+                    <Logo />
+                    <Search />
+                    <SuppContent userInfo={props.userInfo}/>
+                </nav>
+            </div>
         </header>
     );
 }

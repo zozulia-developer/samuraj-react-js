@@ -8,10 +8,10 @@ const Logo = () => {
                 <img src='https://iqonic.design/themes/socialv/html/images/logo.png' alt='logo' />
                 <span>Zashkvar</span>
             </a>
-            <div className={s.iqMenuBt + " align-self-center"}>
+            <div className={s.iqMenuButton + " align-self-center"}>
                 <div className={s.wrapperMenu}>
                     <div className={s.mainCircle}>
-                        <i className="ri-menu-line"></i>
+                        <i className={s.riMenuLine}></i>
                     </div>
                 </div>
             </div>

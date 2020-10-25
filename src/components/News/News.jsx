@@ -6,9 +6,8 @@ const News = (props) => {
     return (
         <div>
             <MyPosts posts={props.newsPage.posts}
-                addPost={props.addPost}
                 newPostText={props.newsPage.newPostText}
-                updateNewPostText={props.updateNewPostText} />
+                dispatch={props.dispatch} />
         </div>
     )
 }

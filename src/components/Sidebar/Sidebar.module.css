@@ -1,33 +1,46 @@
-.nav {
-    grid-area: n;
-    padding: 5px;
-  }
-  .item{
-      margin: 10px 0px 20px 15px;
-      cursor: pointer;
-  }
-  .item:hover{
-      color: greenyellow;
-  }
-  .item a.activeLink{
-      color: gold;
-  }
-  .item.active:hover{
-      color: white;
-  }
-  .item a{
-      font-size: 20px;
-      font-weight: bold;
-      font-family: sans-serif;
-      text-decoration: none;
-      text-transform: uppercase;
-  }
+.sidebarScrollbar {
+    overflow: hidden;
+    outline: none;
+}
 
-  .iqSidebar {
-      position: fixed;
-      z-index: 999;
-      top: 75px;
-      width: 250px;
-      height: 100%;
-      background: #ffffff;
-  }
+.iqSidebarMenu {
+    position: relative;
+}
+
+.item {
+    margin: 10px 0px 20px 15px;
+    cursor: pointer;
+}
+
+.item:hover {
+    color: greenyellow;
+}
+
+.item a.activeLink {
+    color: gold;
+}
+
+.item.active:hover {
+    color: white;
+}
+
+.item a {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.iqSidebar {
+    position: fixed;
+    z-index: 999;
+    top: 75px;
+    width: 250px;
+    height: 100%;
+    background: #ffffff;
+}
+
+.scrollContent {
+    transform: translate3d(0, 0, 0);
+}

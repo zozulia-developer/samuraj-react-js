@@ -12,6 +12,11 @@
     cursor: pointer;
 }
 
+.item a {
+    color: #50b5ff;
+    text-decoration: none;
+}
+
 .item:hover {
     color: greenyellow;
 }
@@ -43,4 +48,17 @@
 
 .scrollContent {
     transform: translate3d(0, 0, 0);
+}
+
+.iqSidebarMenu .iqMenu {
+    margin: 0 15px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.iqSidebarMenu .iqMenu li {
+    list-style-type: none;
+    position: relative;
+    white-space: nowrap;
+    border-radius: 5px;
 }

@@ -7,31 +7,30 @@ import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Dialogs';
 import News from './components/News/News';
 import { Route } from 'react-router-dom';
-import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
 
 const App = (props) => {
     return (
-        <BrowserRouter>
-            <div className='wrapper'>
-                <Sidebar />
-                <Header userInfo={props.state.profilePage} />
-                <div id='content-page' className='content-page'>
-                    <div className="container">
-                        <div className='row' >
-                            <Route path="/news"
-                                render={() => <News
-                                    newsPage={props.state.newsPage}
-                                    dispatch={props.dispatch}/>} />
-                            <Route path="/profile"
-                                render={() => <Profile
-                                    profilePage={props.state.profilePage} />} />
-                            <Route path="/dialogs"
-                                render={() => <Dialogs state={props.state.dialogsPage} />} />
-                        </div>
+        <div className='wrapper'>
+            <Sidebar />
+            <Header userInfo={props.state.profilePage} />
+            <div id='content-page' className='content-page'>
+                <div className="container">
+                    <div className='row' >
+                        <Route path="/news"
+                            render={() => <News
+                                newsPage={props.state.newsPage}
+                                dispatch={props.dispatch} />} />
+                        <Route path="/profile"
+                            render={() => <Profile
+                                profilePage={props.state.profilePage} />} />
+                        <Route path="/dialogs"
+                            render={() => <Dialogs
+                                state={props.state.dialogsPage}
+                                dispatch={props.dispatch} />} />
                     </div>
                 </div>
-            </div >
-        </BrowserRouter>
+            </div>
+        </div >
     );
 }
 

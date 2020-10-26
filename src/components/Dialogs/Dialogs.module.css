@@ -1,17 +1,10 @@
-.dialogs {
-    display: grid;
-    grid-template-columns: 2fr 10fr;
-}
-
-.dialogsItems {
-    padding: 10px;
-    color: white;
-}
-
-.dialogsItems .active {
-    color: gold;
-}
-
-.messages {
-    padding: 10px;
+.iqCard {
+	background: var(--iq-white);
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	border: none;
+	-webkit-box-shadow: 0px 0px 20px 0px rgba(44, 101, 144, 0.1);
+	box-shadow: 0px 0px 20px 0px rgba(44, 101, 144, 0.1);
 }

@@ -1,9 +1,23 @@
+import newsReducer from "./news-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import sidebarReducer from "./sidebar-reducer";
+
 let store = {
   _state: {
     newsPage: {
       posts: [
-        { id: 1, message: 'Hi, how are you?', likesCount: 20 },
-        { id: 2, message: "It's my first post", likesCount: 15 }
+        {
+          id: 1,
+          message: 'Reprehenderit elit fugiat laboris officia laboris sint. Nostrud magna id dolor occaecat est commodo tempor voluptate exercitation sunt nostrud id voluptate. ' +
+            'Ea tempor duis consectetur sit.',
+          likesCount: 20
+        },
+        {
+          id: 2,
+          message: 'Occaecat dolor commodo ex sunt duis sint et pariatur Lorem tempor sint id. Ex ad eu officia consectetur amet laboris non do voluptate eiusmod cillum excepteur cupidatat labore. ' +
+            'Consequat magna dolore est dolor exercitation tempor id amet tempor minim ipsum esse. Occaecat ad ea amet veniam adipisicing fugiat enim.',
+          likesCount: 15
+        }
       ],
       newPostText: 'new post text',
     },
@@ -18,6 +32,7 @@ let store = {
         { id: 2, message: 'Hello!' },
         { id: 3, message: 'Ni hao!' },
       ],
+      newMessageText: '',
       dialogs: [
         { id: 1, name: 'Василий' },
         { id: 2, name: 'Леха' },
@@ -37,19 +52,12 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === 'ADD-POST') {
-      let newPost = {
-        id: 3,
-        message: this._state.newsPage.newPostText,
-        likesCount: 0
-      };
-      this._state.newsPage.posts.push(newPost);
-      this._state.newsPage.newPostText = '';
-      this._callSubscriber(this._state);
-    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-      this._state.newsPage.newPostText = action.newText;
-      this._callSubscriber(this._state);
-    }
+
+    this._state.newsPage = newsReducer(this._state.newsPage, action);
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+    this._state.sidebarPage = sidebarReducer(this._state.sidebarPage, action);
+
+    this._callSubscriber(this._state);
   }
 }
 

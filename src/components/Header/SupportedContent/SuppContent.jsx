@@ -1,7 +1,9 @@
 import React from 'react';
+import store from '../../../redux/redux-store';
 import s from './SuppContent.module.css';
 
 const SuppContent = (props) => {
+
     return (
         <div id="navbarSupportedContent" className="collapse navbar-collapse">
             <ul className={"navbar-nav ml-auto " + s.navbarList}>
@@ -10,7 +12,7 @@ const SuppContent = (props) => {
                         <img className="img-fluid rounded-circle mr-3" src="https://www.nationalplasto.in/img/profile.png" alt="user" />
                         <div className={s.caption}>
                             <h6 className={'mb-0 ' + s.lineHeight}>
-                                {props.userInfo.userInfo[0].firstname} {props.userInfo.userInfo[0].lastname}
+                                info
                             </h6>
                         </div>
                     </a>

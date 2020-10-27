@@ -11,7 +11,7 @@ const Header = (props) => {
                 <nav className="navbar navbar-expand-lg navbar-light p-0">
                     <Logo />
                     <Search />
-                    <SuppContent userInfo={props.userInfo}/>
+                    <SuppContent />
                 </nav>
             </div>
         </header>

@@ -8,3 +8,137 @@
 	-webkit-box-shadow: 0px 0px 20px 0px rgba(44, 101, 144, 0.1);
 	box-shadow: 0px 0px 20px 0px rgba(44, 101, 144, 0.1);
 }
+
+.chatPage img {
+	border-radius: 5px;
+}
+
+.avatar60 {
+	height: 60px;
+	width: 60px;
+	line-height: 60px;
+	font-size: 1.2rem;
+}
+
+h5 {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	margin: 0px;
+	line-height: 1.5;
+	color: var(--iq-title-text);
+	font-size: 1.200em;
+}
+
+.chatSearchBar {
+	position: relative;
+}
+
+.form-group.chat-search-data > i {
+	position: absolute;
+	top: 8px;
+	left: 15px;
+	color: #50b5ff;
+	font-size: 16px;
+}
+
+[class^="ri-"], [class*=" ri-"] {
+	font-family: 'remixicon' !important;
+	font-style: normal;
+	vertical-align: middle;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.ri-search-line::before {
+	content: "\ef2a";
+}
+
+.chatSidebarChannel {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: calc(100vh - 19rem);
+	margin-bottom: 15px;
+}
+
+.iqChatUi li a {
+	text-decoration: none;
+	display: block;
+	padding: 15px 0;
+	border-bottom: 1px solid #f1f1f1;
+}
+
+a {
+	color: #50b5ff;
+}
+
+.chatSidebarChannel .avatar,.avatar {
+	position: relative;
+}
+
+.avatar50 {
+	height: 50px;
+	width: 50px;
+	line-height: 50px;
+	font-size: 1rem;
+}
+
+.chatSidebarName h6 {
+	font-size: 14px;
+}
+
+.chatSidebarName span {
+	color: #777d74;
+	font-size: 12px;
+}
+
+.chatData {
+	background: url('https://funart.pro/uploads/posts/2020-04/1587048738_7-p-foni-dlya-chatov-14.jpg') no-repeat scroll center center;
+	background-size: cover;
+}
+
+.chatData .tabContent {
+	position: relative;
+}
+
+.chatContent {
+	position: relative;
+	text-align: center;
+	padding: 1.4rem;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.scroller {
+	overflow-y: auto;
+	scrollbar-color: var(--iq-primary) var(--iq-light-primary);
+	scrollbar-width: thin;
+}
+
+.chatDetail {
+	overflow: hidden;
+}
+
+.chatContent .chatLeft .chatMessage {
+	text-align: left;
+	float: left;
+	margin: 0 .3rem 1.8rem 1.3rem;
+	color: #777d74;
+	background-color: #ffffff;
+	box-shadow: 0px 0px 20px 0px rgba(44, 101, 144, 0.1);
+}
+
+.chatMessage {
+	position: relative;
+	padding: .75rem 1rem;
+	clear: both;
+	word-break: break-word;
+	background: #50b5ff;
+	border-radius: 15px;
+}
+
+.avatar35 {
+	height: 35px;
+	width: 35px;
+	line-height: 35px;
+	font-size: 0.5rem;
+}

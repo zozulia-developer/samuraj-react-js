@@ -4,11 +4,12 @@ import './style/reset.css';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Profile from './components/Profile/Profile';
+import Users from './components/Users/Users';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import News from './components/News/News';
 import { Route } from 'react-router-dom';
 
-const App = (props) => {
+const App = () => {
     return (
         <div className='wrapper'>
             <Sidebar />
@@ -22,6 +23,8 @@ const App = (props) => {
                             render={() => <Profile />} />
                         <Route path="/dialogs"
                             render={() => <DialogsContainer />} />
+                        <Route path="/users"
+                            render={() => <Users />}/>
                     </div>
                 </div>
             </div>

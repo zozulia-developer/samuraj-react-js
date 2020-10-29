@@ -16,7 +16,7 @@ const Sidebar = () => {
                                 <NavLink to="/profile" activeClassName={s.activeLink}>Профиль</NavLink>
                             </li>
                             <li className={s.item}>
-                                <a>Друзья</a>
+                                <NavLink to="/users" activeClassName={s.activeLink}>Друзья</NavLink>
                             </li>
                             <li className={s.item}>
                                 <NavLink to="/dialogs" activeClassName={s.activeLink}>Сообщения</NavLink>

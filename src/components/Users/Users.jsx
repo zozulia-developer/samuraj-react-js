@@ -1,9 +1,50 @@
 import React from 'react';
+import userPhoto from '../../assets/img/profile.png';
+import s from './Users.module.css';
+import * as axios from 'axios';
 
-const Users = (props) => {
-    return (
-        <div>USERS WILL BE HERE</div>
-    );
+class Users extends React.Component {
+    componentDidMount() {
+        axios
+            .get("https://social-network.samuraijs.com/api/1.0/users")
+            .then(response => {
+                this.props.setUsers(response.data.items);
+            });
+    }
+
+    render() {
+        return (
+            <div>
+                {
+                    this.props.users.map(u => <div key={u.id}>
+                        <span>
+                            <div className={s.userImg}>
+                                <img
+                                    src={u.photos.small != null ? u.photos.small : userPhoto}
+                                    alt="user-avatar" />
+                            </div>
+                            <div>
+                                {u.followed ?
+                                    <button onClick={() => { this.props.unfollow(u.id) }}>Unfollow</button> :
+                                    <button onClick={() => { this.props.follow(u.id) }}>Follow</button>
+                                }
+                            </div>
+                        </span>
+                        <span>
+                            <span>
+                                <div>{u.name}</div>
+                                <div>{u.status}</div>
+                            </span>
+                            <span>
+                                <div>{"u.location.country"}</div>
+                                <div>{"u.location.city"}</div>
+                            </span>
+                        </span>
+                    </div>)
+                }
+            </div>
+        );
+    }
 }
 
 export default Users;

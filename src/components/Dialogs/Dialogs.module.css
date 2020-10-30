@@ -92,7 +92,7 @@ a {
 }
 
 .chatData {
-	background: url('https://funart.pro/uploads/posts/2020-04/1587048738_7-p-foni-dlya-chatov-14.jpg') no-repeat scroll center center;
+	background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR0VJFFV_YeQj3ECv-ju4RbMzfmrhd5WA_syA&usqp=CAU') no-repeat scroll center center;
 	background-size: cover;
 }
 
@@ -102,6 +102,7 @@ a {
 
 .chatContent {
 	position: relative;
+	height: calc(100vh - 17rem);
 	text-align: center;
 	padding: 1.4rem;
 	overflow-y: scroll;
@@ -118,12 +119,20 @@ a {
 	overflow: hidden;
 }
 
+.chatLeft .chatUser {
+	float: left;
+}
+
+.chatUser {
+	text-align: center;
+}
+
 .chatContent .chatLeft .chatMessage {
 	text-align: left;
 	float: left;
 	margin: 0 .3rem 1.8rem 1.3rem;
 	color: #777d74;
-	background-color: #ffffff;
+	background-color: #b3cafd;
 	box-shadow: 0px 0px 20px 0px rgba(44, 101, 144, 0.1);
 }
 

@@ -2,10 +2,10 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import MessageHeader from './Message/MessageHeader';
 
 const Dialogs = (props) => {
     let state = props.dialogsPage;
-
     let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id} />);
     let messagesElements = state.messages.map(m => <Message message={m.message} key={m.id} />);
     let newMessage = state.newMessageText;
@@ -52,18 +52,25 @@ const Dialogs = (props) => {
                             </div>
                             <div className={`col-lg-9 ${s.chatData} p-0 chat-data-right`}>
                                 <div className={s.tabContent}>
-                                    <div className={s.messages}>
-                                        {messagesElements}
-                                        <div className={s.newMessage}>
-                                            <div>
-                                                <textarea
+                                    <div id="chatbox" className="tab-pane fade active show">
+                                        <MessageHeader />
+                                        <div className={`${s.chatContent} ${s.scroller}`}>
+                                            {messagesElements}
+                                        </div>
+                                        <div className="chat-footer p-3 bg-white">
+                                            <form className="d-flex align-items-center" action="">
+                                                <input
                                                     onChange={onMessageChange}
                                                     value={newMessage}
-                                                    placeholder="Введите сообщение..."></textarea>
-                                            </div>
-                                            <div>
-                                                <button onClick={onAddMessage}>Send message</button>
-                                            </div>
+                                                    className="form-control mr-3"
+                                                    type="text"
+                                                    placeholder="Введите сообщение..." />
+                                                <button
+                                                    onClick={onAddMessage}
+                                                    className="btn btn-primary d-flex align-items-center p-2">
+                                                    <span className="d-none d-lg-block ml-1">Отправить</span>
+                                                </button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -72,7 +79,7 @@ const Dialogs = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

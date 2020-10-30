@@ -58,7 +58,7 @@ const Dialogs = (props) => {
                                             {messagesElements}
                                         </div>
                                         <div className="chat-footer p-3 bg-white">
-                                            <form className="d-flex align-items-center" action="">
+                                            <div className="d-flex align-items-center">
                                                 <input
                                                     onChange={onMessageChange}
                                                     value={newMessage}
@@ -70,7 +70,7 @@ const Dialogs = (props) => {
                                                     className="btn btn-primary d-flex align-items-center p-2">
                                                     <span className="d-none d-lg-block ml-1">Отправить</span>
                                                 </button>
-                                            </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

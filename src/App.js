@@ -3,7 +3,7 @@ import './App.css';
 import './style/reset.css';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
-import Profile from './components/Profile/Profile';
+import ProfileContainer from './components/Profile/ProfileContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import News from './components/News/News';
@@ -19,12 +19,12 @@ const App = () => {
                     <div className='row' >
                         <Route path="/news"
                             render={() => <News />} />
-                        <Route path="/profile"
-                            render={() => <Profile />} />
+                        <Route path="/profile/:userId?"
+                            render={() => <ProfileContainer />} />
                         <Route path="/dialogs"
                             render={() => <DialogsContainer />} />
                         <Route path="/users"
-                            render={() => <UsersContainer />}/>
+                            render={() => <UsersContainer />} />
                     </div>
                 </div>
             </div>

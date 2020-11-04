@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import './style/reset.css';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import Sidebar from './components/Sidebar/Sidebar';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import UsersContainer from './components/Users/UsersContainer';
@@ -13,7 +13,7 @@ const App = () => {
     return (
         <div className='wrapper'>
             <Sidebar />
-            <Header />
+            <HeaderContainer />
             <div id='content-page' className='content-page'>
                 <div className="container">
                     <div className='row' >

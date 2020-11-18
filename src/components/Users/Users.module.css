@@ -8,3 +8,18 @@
 .selectedPage {
     font-weight: bold;
 }
+
+.pageNumbers {
+    margin-bottom: 5px;
+}
+
+.pageNumber {
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.pageNumber:hover {
+    background: rgb(233, 233, 233);
+    text-decoration: underline;
+}

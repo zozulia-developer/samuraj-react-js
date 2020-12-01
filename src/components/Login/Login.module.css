@@ -1,0 +1,36 @@
+h1 {
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+input {
+    border: none;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+button {
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: green;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+}
+
+button:hover {
+    background-color: lightgreen;
+    color: black;
+    font-weight: bold;
+}
+
+.input {
+    margin-bottom: 5px;
+}
+
+.loginForm {
+    margin: 0 auto;
+}

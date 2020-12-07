@@ -1,20 +1,14 @@
 import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
+import {Field, reduxForm} from "redux-form";
 
 const MyPosts = (props) => {
     let postsElements =
         props.posts.map(p => <Post message={p.message} likeCount={p.likesCount} />);
 
-    let newPostElement = React.createRef();
-
-    let onAddPost = () => {
-        props.addPost();
-    }
-
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text);
+    let addNewPost = (values) => {
+        props.addPost(values.newPostText);
     }
 
     return (
@@ -30,18 +24,7 @@ const MyPosts = (props) => {
                         <div className={s.userImg}>
                             <img className={`${s.avatar60} rounded-circle`} src="https://www.nationalplasto.in/img/profile.png" alt="userImg" />
                         </div>
-                        <form className={`${s.postText} ml-3 w-100`} action="">
-                            <input
-                                className="form-control rounded"
-                                type="text"
-                                placeholder="Напишите сообщение..."
-                                onChange={onPostChange}
-                                ref={newPostElement}
-                                value={props.newPostText} />
-                        </form>
-                    </div>
-                    <div>
-                        <button className="btn btn-primary d-block w-100 mt-3" onClick={onAddPost}>Add post</button>
+                        <PostReduxForm onSubmit={addNewPost}/>
                     </div>
                     <hr />
                 </div>
@@ -52,5 +35,25 @@ const MyPosts = (props) => {
         </div>
     );
 }
+
+const PostForm = (props) => {
+    return (
+        <form
+            className={`${s.postText} ml-3 w-100`}
+            onSubmit={props.handleSubmit}>
+            <Field
+                component={"input"}
+                name={"newPostText"}
+                className="form-control rounded"
+                placeholder="Напишите сообщение..."
+                value={props.newPostText} />
+            <div>
+                <button className="btn btn-primary d-block w-100 mt-3">Add post</button>
+            </div>
+        </form>
+    )
+}
+
+const PostReduxForm = reduxForm({form: 'ProfileAddNewPostForm'})(PostForm)
 
 export default MyPosts;

@@ -4,20 +4,15 @@ import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import MessageHeader from './Message/MessageHeader';
+import {Field, reduxForm} from "redux-form";
 
 const Dialogs = (props) => {
   let state = props.dialogsPage;
   let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id} />);
   let messagesElements = state.messages.map(m => <Message message={m.message} key={m.id} />);
-  let newMessage = state.newMessageText;
 
-  let onAddMessage = () => {
-    props.addMessage();
-  }
-
-  let onMessageChange = (e) => {
-    let text = e.target.value;
-    props.updateNewMessageText(text);
+  let addNewMessage = (values) => {
+    props.addMessage(values.newMessageBody)
   }
 
   if (!props.isAuth) return <Redirect to="/login" />
@@ -62,17 +57,7 @@ const Dialogs = (props) => {
                     </div>
                     <div className="chat-footer p-3 bg-white">
                       <div className="d-flex align-items-center">
-                        <input
-                          onChange={onMessageChange}
-                          value={newMessage}
-                          className="form-control mr-3"
-                          type="text"
-                          placeholder="Введите сообщение..." />
-                        <button
-                          onClick={onAddMessage}
-                          className="btn btn-primary d-flex align-items-center p-2">
-                          <span className="d-none d-lg-block ml-1">Отправить</span>
-                        </button>
+                        <AddMessageFormRedux onSubmit={addNewMessage}/>
                       </div>
                     </div>
                   </div>
@@ -85,5 +70,23 @@ const Dialogs = (props) => {
     </div >
   )
 }
+
+const AddMessageForm = (props) => {
+  return (
+      <form onSubmit={props.handleSubmit}>
+        <Field
+            component={"input"}
+            name={"newMessageBody"}
+            className="form-control mr-3"
+            type="text"
+            placeholder="Введите сообщение..." />
+        <button className="btn btn-primary d-flex align-items-center p-2">
+          <span className="d-none d-lg-block ml-1">Отправить</span>
+        </button>
+      </form>
+  )
+}
+
+const AddMessageFormRedux = reduxForm({form: "dialogAddMessageForm"})(AddMessageForm)
 
 export default Dialogs;

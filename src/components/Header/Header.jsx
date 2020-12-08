@@ -12,7 +12,9 @@ const Header = (props) => {
                 <nav className="navbar navbar-expand-lg navbar-light p-0">
                     <Logo />
                     <Search />
-                    {props.isAuth ? <SuppContent /> : <NavLink to="/login">Login</NavLink>}
+                    {props.isAuth
+                        ? <SuppContent {...props}/>
+                    : <NavLink to="/login">Login</NavLink>}
                 </nav>
             </div>
         </header>

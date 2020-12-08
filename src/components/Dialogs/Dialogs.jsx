@@ -5,6 +5,8 @@ import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import MessageHeader from './Message/MessageHeader';
 import {Field, reduxForm} from "redux-form";
+import {Input} from "../common/FormsControls/FormsControls";
+import {maxLengthCreator, required} from "../../utils/validators/validators";
 
 const Dialogs = (props) => {
   let state = props.dialogsPage;
@@ -71,12 +73,15 @@ const Dialogs = (props) => {
   )
 }
 
+const maxLength100 = maxLengthCreator(100);
+
 const AddMessageForm = (props) => {
   return (
       <form onSubmit={props.handleSubmit}>
         <Field
-            component={"input"}
+            component={Input}
             name={"newMessageBody"}
+            validate={[required, maxLength100]}
             className="form-control mr-3"
             type="text"
             placeholder="Введите сообщение..." />

@@ -1,5 +1,4 @@
 import React from 'react';
-import store from '../../../redux/redux-store';
 import s from './SuppContent.module.css';
 
 const SuppContent = (props) => {
@@ -17,7 +16,7 @@ const SuppContent = (props) => {
                         </div>
                     </a>
                 </li>
-                <li></li>
+                <li><button onClick={props.logout}>Log out</button></li>
                 <li></li>
                 <li></li>
                 <li></li>

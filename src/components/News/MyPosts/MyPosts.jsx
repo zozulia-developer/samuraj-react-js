@@ -2,6 +2,10 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
 import {Field, reduxForm} from "redux-form";
+import {maxLengthCreator, required} from "../../../utils/validators/validators";
+import {Input} from "../../common/FormsControls/FormsControls";
+
+const maxLength10 = maxLengthCreator(10);
 
 const MyPosts = (props) => {
     let postsElements =
@@ -42,8 +46,9 @@ const PostForm = (props) => {
             className={`${s.postText} ml-3 w-100`}
             onSubmit={props.handleSubmit}>
             <Field
-                component={"input"}
+                component={Input}
                 name={"newPostText"}
+                validate={[required, maxLength10]}
                 className="form-control rounded"
                 placeholder="Напишите сообщение..."
                 value={props.newPostText} />

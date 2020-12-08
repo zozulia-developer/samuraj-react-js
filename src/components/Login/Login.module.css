@@ -9,6 +9,7 @@ input {
     border: none;
     border-radius: 8px;
     padding: 6px;
+    width: 180px;
 }
 
 button {

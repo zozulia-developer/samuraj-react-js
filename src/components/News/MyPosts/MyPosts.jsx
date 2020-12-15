@@ -7,9 +7,11 @@ import {Input} from "../../common/FormsControls/FormsControls";
 
 const maxLength10 = maxLengthCreator(10);
 
-const MyPosts = (props) => {
+const MyPosts = React.memo(props => {
+    console.log("RENDER POSTS")
     let postsElements =
-        props.posts.map(p => <Post message={p.message} likeCount={p.likesCount} />);
+        props.posts
+            .map(p => <Post message={p.message} likeCount={p.likesCount}/>);
 
     let addNewPost = (values) => {
         props.addPost(values.newPostText);
@@ -17,7 +19,8 @@ const MyPosts = (props) => {
 
     return (
         <div className="col-sm-12">
-            <div id="post-modal-data" className={`${s.iqCard} ${s.iqCardBlock} ${s.iqCardStretch} ${s.iqCardHeight}`}>
+            <div id="post-modal-data"
+                 className={`${s.iqCard} ${s.iqCardBlock} ${s.iqCardStretch} ${s.iqCardHeight}`}>
                 <div className={`${s.iqCardHeader} d-flex justify-content-between`}>
                     <div className={`${s.iqHeaderTitle}`}>
                         <h4 className="card-title">Создать Пост</h4>
@@ -26,11 +29,12 @@ const MyPosts = (props) => {
                 <div className={s.iqCardBody} data-toggle="modal" data-target="#post-modal">
                     <div className="d-flex align-items-center">
                         <div className={s.userImg}>
-                            <img className={`${s.avatar60} rounded-circle`} src="https://www.nationalplasto.in/img/profile.png" alt="userImg" />
+                            <img className={`${s.avatar60} rounded-circle`}
+                                 src="https://www.nationalplasto.in/img/profile.png" alt="userImg"/>
                         </div>
                         <PostReduxForm onSubmit={addNewPost}/>
                     </div>
-                    <hr />
+                    <hr/>
                 </div>
                 <div className={s.posts}>
                     {postsElements}
@@ -38,7 +42,7 @@ const MyPosts = (props) => {
             </div>
         </div>
     );
-}
+});
 
 const PostForm = (props) => {
     return (

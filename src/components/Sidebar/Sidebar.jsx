@@ -22,9 +22,6 @@ const Sidebar = () => {
                                 <NavLink to="/dialogs" activeClassName={s.activeLink}>Сообщения</NavLink>
                             </li>
                             <li className={s.item}>
-                                <a>Музыка</a>
-                            </li>
-                            <li className={s.item}>
                                 <a>Настройки</a>
                             </li>
                         </ul>

@@ -10,9 +10,9 @@ const Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, porti
   }
 
   let portionCount = Math.ceil(pagesCount / portionSize);
-  let {portionNumber, setPortionNumber} = useState(1);
-  let leftPortionPageNumber = (portionNumber - 1) * portionNumber + 1;
-  let rightPortionPageNumber = portionNumber + portionSize;
+  let [portionNumber, setPortionNumber] = useState(1);
+  let leftPortionPageNumber = (portionNumber - 1) * portionSize + 1;
+  let rightPortionPageNumber = portionNumber * portionSize;
 
   return (
     <div className={s.pageNumbers}>

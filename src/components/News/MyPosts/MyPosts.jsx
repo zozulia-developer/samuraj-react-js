@@ -8,7 +8,6 @@ import {Input} from "../../common/FormsControls/FormsControls";
 const maxLength10 = maxLengthCreator(10);
 
 const MyPosts = React.memo(props => {
-    console.log("RENDER POSTS")
     let postsElements =
         props.posts
             .map(p => <Post message={p.message} likeCount={p.likesCount}/>);

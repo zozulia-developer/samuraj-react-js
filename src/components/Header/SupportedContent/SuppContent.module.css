@@ -1,4 +1,4 @@
-.navbar-list li {
+.navbarList li {
   float: left;
   list-style-type: none;
   position: relative;
@@ -9,7 +9,7 @@
   height: 50px;
 }
 
-.navbar-list li>a {
+.navbarList li>a {
   font-size: 18px;
   padding: 0 15px;
   line-height: 73px;
@@ -18,7 +18,7 @@
   min-height: 75px;
 }
 
-.navbar-list li .caption {
+.navbarList li .caption {
   line-height: 16px;
 }
 
@@ -26,6 +26,7 @@
   position: relative;
   overflow: hidden;
 }
+
 
 .lineHeight {
   line-height: normal;

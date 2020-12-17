@@ -32,7 +32,7 @@ const Dialogs = (props) => {
                       <img className={s.avatar60} src="https://www.nationalplasto.in/img/profile.png" alt="chat-user" />
                     </div>
                     <div className="chat-caption">
-                      <h5 className="mb-0">Test Info</h5>
+                      <h5 className="mb-0">{props.auth.login}</h5>
                       <p className="m-0">React Developer</p>
                     </div>
                   </div>
@@ -53,7 +53,7 @@ const Dialogs = (props) => {
               <div className={`col-lg-9 ${s.chatData} p-0 chat-data-right`}>
                 <div className={s.tabContent}>
                   <div id="chatbox" className="tab-pane fade active show">
-                    <MessageHeader />
+                    <MessageHeader login={props.auth.login}/>
                     <div className={`${s.chatContent} ${s.scroller}`}>
                       {messagesElements}
                     </div>
@@ -84,8 +84,9 @@ const AddMessageForm = (props) => {
             validate={[required, maxLength100]}
             className="form-control mr-3"
             type="text"
-            placeholder="Введите сообщение..." />
-        <button className="btn btn-primary d-flex align-items-center p-2">
+            placeholder="Введите сообщение..."
+            size="120"/>
+        <button className="btn btn-primary btn-lg btn-block">
           <span className="d-none d-lg-block ml-1">Отправить</span>
         </button>
       </form>

@@ -1,4 +1,3 @@
-import {stopSubmit} from "redux-form";
 import {getMyInfo} from "./auth-reducer";
 
 const INITIALIZED_SUCCESS = 'INITIALIZED-SUCCESS';

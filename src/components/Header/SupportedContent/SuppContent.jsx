@@ -1,25 +1,22 @@
 import React from 'react';
 import s from './SuppContent.module.css';
+import {NavLink} from "react-router-dom";
 
-const SuppContent = (props) => {
-
+const SuppContent = ({login, logout}) => {
     return (
         <div id="navbarSupportedContent" className="collapse navbar-collapse">
             <ul className={"navbar-nav ml-auto " + s.navbarList}>
                 <li>
-                    <a className={s.iqWavesEffect + ' d-flex align-items-center'} href="#">
-                        <img className="img-fluid rounded-circle mr-3" src="https://www.nationalplasto.in/img/profile.png" alt="user" />
+                    <NavLink className={s.iqWavesEffect + ' d-flex align-items-center'} to={"/profile/"}>
+                        <img
+                          className="img-fluid rounded-circle mr-3"
+                          src="https://www.nationalplasto.in/img/profile.png" alt="user" />
                         <div className={s.caption}>
-                            <h6 className={'mb-0 ' + s.lineHeight}>
-                                info
-                            </h6>
+                            <h6 className={'mb-0 ' + s.lineHeight}>{login}</h6>
                         </div>
-                    </a>
+                    </NavLink>
                 </li>
-                <li><button onClick={props.logout}>Log out</button></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li><button className="btn btn-danger" onClick={logout}>Log out</button></li>
             </ul>
         </div>
     )

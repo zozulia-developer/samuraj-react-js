@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Login.module.css';
-import {Field, reduxForm} from "redux-form";
+import {reduxForm} from "redux-form";
 import {createField, Input} from "../common/FormsControls/FormsControls";
 import {required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
@@ -10,21 +10,27 @@ import style from '../common/FormsControls/FormsControls.module.css';
 
 const LoginForm = ({handleSubmit, error}) => {
   return (
-    <form onSubmit={handleSubmit}>
-      {createField(Input, "Email", "email", [required])}
-      {createField(Input, "Password", "password", [required], {type: "password"})}
-      {createField(Input, null, "rememberMe", [], {type: "checkbox"}, "remember me")}
+    <div className={s.wrapLogin}>
+      <form className={s.loginForm} onSubmit={handleSubmit}>
+        <span className={`${s.loginFormTitle} ${s.pb26}`}>Welcome</span>
+        {createField(Input, "Email", "email", [required])}
+        {createField(Input, "Password", "password", [required], {type: "password"})}
+        {createField(Input, null, "rememberMe", [], {type: "checkbox"}, "Remember me")}
 
-      {error &&
-      <div className={style.formSummaryError}>
-        {error}
-      </div>
-      }
+        {error &&
+        <div className={style.formSummaryError}>
+          {error}
+        </div>
+        }
 
-      <div>
-        <button className="btn btn-success">Login</button>
-      </div>
-    </form>
+        <div className={s.containerLoginFormBtn}>
+          <div className={s.wrapLoginFormBtn}>
+            <div className={s.loginFormBgBtn}></div>
+            <button className={s.loginFormBtn}>Login</button>
+          </div>
+        </div>
+      </form>
+    </div>
   )
 }
 
@@ -38,12 +44,8 @@ const Login = (props) => {
   if (props.isAuth) {
     return <Redirect to={"/profile"}/>
   }
-  console.log(props.isAuth)
 
-  return <div className={s.loginForm}>
-    <h1>Login</h1>
-    <LoginReduxForm onSubmit={onSubmit}/>
-  </div>
+  return <LoginReduxForm onSubmit={onSubmit}/>
 }
 
 const mapStateToProps = (state) => ({

@@ -1,20 +1,87 @@
-h1 {
-    font-weight: bold;
-    font-size: 24px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-input {
-    border: none;
-    border-radius: 8px;
-    padding: 6px;
-}
-
-.input {
-    margin-bottom: 5px;
+.wrapLogin {
+    width: 390px;
+    margin: 0 auto;
+    background: #f8f8f8;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 77px 55px 33px 55px;
+    -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
 .loginForm {
+    width: 100%;
+}
+
+.loginFormTitle {
+    display: block;
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 30px;
+    color: #333333;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.pb26 {
+    padding-bottom: 26px;
+}
+
+.pb48 {
+    padding-bottom: 48px;
+}
+
+.containerLoginFormBtn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 13px;
+}
+
+.wrapLoginFormBtn {
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 1;
+    border-radius: 25px;
+    overflow: hidden;
     margin: 0 auto;
+}
+
+.loginFormBgBtn {
+    position: absolute;
+    z-index: -1;
+    width: 300%;
+    height: 100%;
+    background: -moz-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+    top: 0;
+    left: -100%;
+    transition: all 0.4s;
+}
+
+button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.loginFormBtn {
+    font-family: Poppins;
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+}
+
+.wrapLoginFormBtn:hover .loginFormBgBtn {
+    left: 0;
 }

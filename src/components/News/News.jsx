@@ -1,5 +1,4 @@
 import React from 'react';
-import s from './News.module.css';
 import MyPostsContainer from './MyPosts/MyPostsContainer';
 
 const News = (props) => {

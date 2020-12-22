@@ -19,16 +19,18 @@ const User = ({user, followingInProgress, unfollow, follow}) => {
               <div className={s.userDetail}>
                 <div className="d-flex flex-wrap justify-content-between align-items-lg-start">
                   <div className="d-flex">
-                    <div className={s.userImg}>
+                    <div className={`${s.profileImg} pr-4`}>
                       <NavLink to={"/profile/" + user.id}>
-                        <img src={user.photos.small != null ? user.photos.small : userPhoto}
-                             alt="user-avatar"/>
+                        <img
+                          className={`${s.avatar130} img-fluid`}
+                          src={user.photos.small != null ? user.photos.small : userPhoto}
+                          alt="user-avatar"/>
                       </NavLink>
                     </div>
-                    <div>{user.name}</div>
-                    <div>{user.status}</div>
-                    <div>{"user.location.country"}</div>
-                    <div>{"user.location.city"}</div>
+                    <div className={s.userDataBlock}>
+                      <h4>{user.name}</h4>
+                      <h6>{user.status ? user.status : '(empty status)'}</h6>
+                    </div>
                   </div>
                   {user.followed ?
                     <button className="btn btn-danger" disabled={followingInProgress.some(id => id === user.id)}

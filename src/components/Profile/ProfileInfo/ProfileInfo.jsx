@@ -27,7 +27,8 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
             <div className={s.coverContainer}>
               <img
                 className={`${s.rounded} img-fluid`}
-                src="https://insurtechgateway.com/wp-content/uploads/2019/05/blur-city-dark-394377-1110x270.jpg" alt="profileBackground"/>
+                src="https://insurtechgateway.com/wp-content/uploads/2019/05/blur-city-dark-394377-1110x270.jpg"
+                alt="profileBackground"/>
             </div>
             <div className={`${s.userDetail} text-center mb-3`}>
               <div className={s.profileImg}>
@@ -37,9 +38,6 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
               </div>
               <div className={s.profileDetail}>
                 <h3>{profile.fullName}</h3>
-                <ProfileStatusWithHooks
-                  status={status}
-                  updateStatus={updateStatus}/>
               </div>
             </div>
             <div className={`${s.profileInfo} p-4 d-flex align-items-center justify-content-between position-relative`}>
@@ -77,7 +75,9 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
           <div>
             {isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
           </div>
-
+          <ProfileStatusWithHooks
+            status={status}
+            updateStatus={updateStatus}/>
           {editMode ?
             <ProfileDataForm profile={profile}/> :
             <ProfileData goToEditMode={() => {

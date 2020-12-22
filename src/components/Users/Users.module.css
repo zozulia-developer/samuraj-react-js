@@ -14,9 +14,23 @@
     border-radius: 5px !important;
 }
 
-.userImg img {
-    height: 100px;
-    width: 100px;
-    line-height: 100px;
-    border-radius: 5px;
+.profileImg {
+    margin-top: -70px;
+    position: relative;
+}
+
+.profileImg img {
+    -webkit-border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, .1);
+    height: auto;
+}
+
+.avatar130 {
+    width: 130px;
+    line-height: 130px;
+    font-size: 1.6rem;
+}
+
+.userDataBlock h6 {
+    margin-top: 5px;
 }

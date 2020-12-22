@@ -7,7 +7,7 @@ const ProfileDataForm = ({profile}) => {
   return (
     <form>
       <div>
-        <button className={s.editBtn} onClick={()=>{}}>Save</button>
+        <button className={`btn btn-primary`} onClick={()=>{}}>Save</button>
       </div>
       <div>
         <b>Имя:</b> {createField(Input, "", "Имя", [])}

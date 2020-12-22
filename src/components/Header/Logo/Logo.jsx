@@ -12,9 +12,7 @@ const Logo = () => {
       </a>
       <div className={s.iqMenuButton + " align-self-center"}>
         <div className={s.wrapperMenu}>
-          <div className={s.mainCircle}>
-            <i className="fas fa-bars"></i>
-          </div>
+          <div className={s.mainCircle}></div>
         </div>
       </div>
     </div>

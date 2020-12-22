@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './SuppContent.module.css';
 import {NavLink} from "react-router-dom";
+import userPhoto from "../../../assets/img/profile.png";
 
 const SuppContent = ({login, logout}) => {
     return (
@@ -10,7 +11,7 @@ const SuppContent = ({login, logout}) => {
                     <NavLink className={s.iqWavesEffect + ' d-flex align-items-center'} to={"/profile/"}>
                         <img
                           className="img-fluid rounded-circle mr-3"
-                          src="https://www.nationalplasto.in/img/profile.png" alt="user" />
+                          src={userPhoto} alt="user" />
                         <div className={s.caption}>
                             <h6 className={'mb-0 ' + s.lineHeight}>{login}</h6>
                         </div>
